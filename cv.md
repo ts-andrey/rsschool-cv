@@ -1,11 +1,11 @@
-#### I am Andrei Tsakunou 
+## I am Andrei Tsakunou 
 
-my email: andrey.tsakunov@gmail.com,  
-telegram: @andrey_tsakunov \
+**email**: andrey.tsakunov@gmail.com,  
+**telegram**: @andrey_tsakunov \
 
-My constant goal is endless improvement in order to become the best JS developer I can become and then overcome my limits to become even better. Along this path, I hone my existing skills and master new ones - this opens up a lot of new opportunities for improving my code and UX / UI.  
+My constant goal is **endless improvement** in order to become the best JS developer I can become and then **overcome my limits** to become even better. Along this path, I hone my existing skills and master new ones - this opens up a lot of new opportunities for **improving my code *and* UX / UI**.  
 
-skills: JavaScript, CSS3, HTML5, Git, Markdown, VSCode.
+**skills**: JavaScript, CSS3, HTML5, Git, Markdown, VSCode.
 
 ```
 // my code from codewars:
@@ -43,7 +43,7 @@ const reverse = (str) => {
 };
 ```  
 
-degree: Master of Science (Electrical Engineering) - Sukhoi State Technical University of Gomel, 2016.  
+**degree**: Master of Science (Electrical Engineering) - *Sukhoi State Technical University of Gomel, 2016*.  
 
-English: B1+,  
-Russian: native
+**English**: *B1+*,  
+**Russian**: *native*
