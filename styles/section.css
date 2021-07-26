@@ -1,0 +1,59 @@
+section {
+  display: flex;
+  font-size: 1.2rem;
+}
+
+main {
+  width: 65%;
+  padding: 2rem;
+  background-color: #ffff002a;
+
+}
+
+main h3 {
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
+main h3:first-of-type {
+  margin: -0.5rem 0 1rem 0;
+}
+
+main ul li {
+  padding: 0.3rem 0;
+}
+
+main ul li:hover {
+  color: rgb(92, 92, 92);
+}
+
+main p {
+	line-height: 1.2;
+}
+
+main .center {
+	margin: 0 auto;
+	width: 12rem;
+}
+
+@media screen and (min-width: 900px){
+	main {
+		padding: 2rem 3rem;	
+	}
+}
+
+@media screen and (min-width: 1400px){
+	main {
+		padding: 3rem 5rem;	
+	}
+
+	main ul li {
+		padding: 0.5rem 0;
+	}
+
+	main h3 {
+		margin: 2rem 0 2rem 0;
+	}
+
+}

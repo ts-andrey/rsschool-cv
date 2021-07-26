@@ -1,0 +1,21 @@
+header {
+  font-family: 'Karla', sans-serif;
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  text-align: center;
+  /* background-color: rgba(0, 255, 115, 0.171); */
+  background-color: #0080004f;
+  border-radius: 0.5rem 2rem 0 0;
+}
+
+header h2 {
+  padding: 1rem;
+  font-size: 3rem;
+  color: #0000ffab;
+}
+
+header h4 {
+  padding-bottom: 1rem;
+  font-size: 1.6rem;
+  color: #0000ffab;
+}
