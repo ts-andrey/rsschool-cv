@@ -53,30 +53,56 @@
             <p>Sukhoi State Technical University Of Gomel <time datetime="2014">2014-2016</time></p>
           </li>
         </ul>
-        <h3>Skills:</h3>
-        <ul class="center">
-          <li>JavaScript</li>
-          <li>CSS3</li>
-          <li>HTML5</li>
-          <li>Git</li>
-          <li>Markdown</li>
-          <li>VSCode</li>
-        </ul>
-        <h3>Languages:</h3>
-        <ul class="center">
-          <li>English: B1+</li>
-          <li>Russian: native</li>
-        </ul>
+        <h3>Code example</h3>
+        <textarea name="code-example" id="code-example" cols="30" rows="20" readonly>
+// this function should return the first pair of the two prime numbers spaced with a step between them
+
+const step = (step, start, end) => {
+  const isPrime = (num) => {
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++) if (num % i === 0) return false;
+    return num > 1;
+  };
+
+  let aNumPair;
+  let bNumPair;
+  for (i = 0; i <= end - start - step; i++) {
+    aNumPair = start + i;
+    bNumPair = aNumPair + step;
+    if (isPrime(aNumPair) && isPrime(bNumPair)) return [aNumPair, bNumPair];
+  };
+  return null;
+};
+        </textarea>
+        <div class="sided">
+          <div class="left">
+            <h3>Skills:</h3>
+            <ul class="center">
+              <li>JavaScript</li>
+              <li>CSS3</li>
+              <li>HTML5</li>
+              <li>Git</li>
+              <li>Markdown</li>
+              <li>VSCode</li>
+            </ul>
+          </div>
+          <div class="right">
+            <h3>Languages:</h3>
+            <ul class="center">
+              <li>English: B1+</li>
+              <li>Russian: native</li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
     <footer>
       <ul>
         <li>
-          <a href="https://github.com/ts-andrey">my github</a>
+          <a href="https://github.com/ts-andrey" target="_blank">my github</a>
           <time datetime="2021-07-26">CV created in 2021</time>
         </li>
         <li>
-          <a href="https://rs.school/js/"
+          <a href="https://rs.school/js/" target="_blank"
             >rsschool js course<img src="./img/rs_school_js.svg" alt="school logo"
           /></a>
         </li>
