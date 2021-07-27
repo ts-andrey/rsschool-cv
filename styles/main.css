@@ -37,6 +37,18 @@ section .center {
 	width: 12rem;
 }
 
+.sided {
+	width: 25rem;
+	margin: 2rem auto;
+	display: flex;
+}
+
+textarea{
+	display: block;
+	width: 30rem;
+	margin: 0 auto;
+}
+
 @media screen and (min-width: 900px){
 	section {
 		padding: 2rem 3rem;	
