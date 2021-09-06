@@ -1,7 +1,7 @@
 ## I am Andrei Tsakunou 
 
 **email**: andrey.tsakunov@gmail.com,  
-**telegram**: @andrey_tsakunov \
+**telegram**: @andrey_tsakunov 
 
 My constant goal is **endless improvement** in order to become the best JS developer I can become and then **overcome my limits** to become even better. Along this path, I hone my existing skills and master new ones - this opens up a lot of new opportunities for **improving my code *and* UX / UI**.  
 
