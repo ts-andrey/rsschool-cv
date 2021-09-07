@@ -1,0 +1,92 @@
+@import '../util/variables';
+body {
+  background-color: #eee;
+}
+main {
+  font: $font-default;
+  color: $color-dark;
+  letter-spacing: 0.05rem;
+  line-height: 1.15;
+  width: $width-cv;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+
+  aside {
+    padding: 3rem 5rem;
+    width: $width-aside;
+    background-color: $color-dark-light;
+    color: $color-light-1;
+    h3 {
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+
+        .level {
+          margin-top: 0.5rem;
+          height: 1rem;
+          width: 15rem;
+
+          &.js {
+            background: linear-gradient(to right, $color-light-2 0% 45%, $color-dark 45% 100%);
+          }
+          &.css3 {
+            background: linear-gradient(to right, $color-light-2 0% 70%, $color-dark 70% 100%);
+          }
+          &.sass {
+            background: linear-gradient(to right, $color-light-2 0% 50%, $color-dark 50% 100%);
+          }
+          &.html5 {
+            background: linear-gradient(to right, $color-light-2 0% 75%, $color-dark 75% 100%);
+          }
+          &.git {
+            background: linear-gradient(to right, $color-light-2 0% 25%, $color-dark 25% 100%);
+          }
+          &.markdown {
+            background: linear-gradient(to right, $color-light-2 0% 70%, $color-dark 70% 100%);
+          }
+          &.vscode {
+            background: linear-gradient(to right, $color-light-2 0% 40%, $color-dark 40% 100%);
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper {
+    width: $width-cv - $width-aside;
+    padding: $padding-default;
+    margin: 0 auto;
+    background-color: $color-light-1;
+
+    h3 {
+      font-size: 2rem;
+      margin: 2rem 0;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    ul {
+      list-style-type: none;
+    }
+    p {
+      margin: 0.5rem 0;
+    }
+    section {
+      padding: 1rem 0;
+      border-bottom: 0.1rem solid darken($color-light-1, 5%);
+      &:first-of-type {
+        padding-top: 0;
+      }
+      &:last-of-type {
+        border-bottom: none;
+      }
+    }
+  }
+}

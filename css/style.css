@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 10px; }
+
+body {
+  box-sizing: border-box; }
+
+footer {
+  font: 1.4rem "Lato", sans-serif;
+  color: #dfdfdf;
+  width: 110rem;
+  margin: 0 auto; }
+  footer .wrapper {
+    background-color: #0B0C10;
+    padding: 1.5rem 3rem; }
+  footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    footer ul li {
+      text-align: center;
+      height: inherit; }
+      footer ul li a {
+        color: #dfdfdf;
+        text-decoration: none;
+        display: flex;
+        align-items: center; }
+        footer ul li a:visited, footer ul li a:active {
+          text-decoration: none; }
+        footer ul li a svg {
+          height: 3rem;
+          margin-right: 1rem;
+          fill: #66FCF1; }
+      footer ul li .date {
+        margin-bottom: 0.5rem; }
+
+header {
+  font: 1.4rem "Lato", sans-serif;
+  letter-spacing: 0.05rem;
+  line-height: 1.15;
+  color: #dfdfdf;
+  width: 110rem;
+  margin: 0 auto; }
+  header .wrapper {
+    background-color: #1F2833;
+    display: flex;
+    justify-content: space-between; }
+  header .image {
+    text-align: center;
+    background-color: #fcfcfc;
+    width: 25rem;
+    height: 19rem; }
+    header .image img {
+      height: inherit; }
+  header .info {
+    padding: 3rem;
+    width: fit-content;
+    width: 85rem; }
+  header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #66FCF1; }
+  header h3 {
+    color: #66FCF1;
+    font-size: 2rem;
+    margin-bottom: 1rem; }
+  header ul {
+    list-style: none;
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 0.5rem 2.5rem; }
+    header ul li:first-of-type {
+      grid-column-start: span 4; }
+    header ul li a {
+      text-decoration: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #dfdfdf; }
+      header ul li a svg {
+        width: 2rem;
+        margin-right: 1rem;
+        fill: #66FCF1; }
+      header ul li a:active, header ul li a:visited {
+        text-decoration: none; }
+
+body {
+  background-color: #eee; }
+
+main {
+  font: 1.4rem "Lato", sans-serif;
+  color: #0B0C10;
+  letter-spacing: 0.05rem;
+  line-height: 1.15;
+  width: 110rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse; }
+  main aside {
+    padding: 3rem 5rem;
+    width: 25rem;
+    background-color: #1F2833;
+    color: #dfdfdf; }
+    main aside h3 {
+      font-size: 2rem;
+      margin: 2rem 0; }
+    main aside ul {
+      list-style-type: none; }
+      main aside ul li {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem; }
+        main aside ul li .level {
+          margin-top: 0.5rem;
+          height: 1rem;
+          width: 15rem; }
+          main aside ul li .level.js {
+            background: linear-gradient(to right, #66FCF1 0% 45%, #0B0C10 45% 100%); }
+          main aside ul li .level.css3 {
+            background: linear-gradient(to right, #66FCF1 0% 70%, #0B0C10 70% 100%); }
+          main aside ul li .level.sass {
+            background: linear-gradient(to right, #66FCF1 0% 50%, #0B0C10 50% 100%); }
+          main aside ul li .level.html5 {
+            background: linear-gradient(to right, #66FCF1 0% 75%, #0B0C10 75% 100%); }
+          main aside ul li .level.git {
+            background: linear-gradient(to right, #66FCF1 0% 25%, #0B0C10 25% 100%); }
+          main aside ul li .level.markdown {
+            background: linear-gradient(to right, #66FCF1 0% 70%, #0B0C10 70% 100%); }
+          main aside ul li .level.vscode {
+            background: linear-gradient(to right, #66FCF1 0% 40%, #0B0C10 40% 100%); }
+  main .wrapper {
+    width: 85rem;
+    padding: 3rem;
+    margin: 0 auto;
+    background-color: #dfdfdf; }
+    main .wrapper h3 {
+      font-size: 2rem;
+      margin: 2rem 0; }
+      main .wrapper h3:first-of-type {
+        margin-top: 0; }
+    main .wrapper ul {
+      list-style-type: none; }
+    main .wrapper p {
+      margin: 0.5rem 0; }
+    main .wrapper section {
+      padding: 1rem 0;
+      border-bottom: 0.1rem solid #d2d2d2; }
+      main .wrapper section:first-of-type {
+        padding-top: 0; }
+      main .wrapper section:last-of-type {
+        border-bottom: none; }

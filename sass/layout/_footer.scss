@@ -1,0 +1,41 @@
+@import '../util/variables';
+
+footer {
+  font: $font-default;
+  color: $color-light-1;
+  width: $width-cv;
+  margin: 0 auto;
+  .wrapper {
+    background-color: $color-dark;
+    padding: 1.5rem 3rem;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      text-align: center;
+      height: inherit;
+      a {
+        color: $color-light-1;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        &:visited,
+        &:active {
+          text-decoration: none;
+        }
+        svg {
+          height:  3rem;
+          margin-right: 1rem;
+          fill: $color-light-2;
+        }
+      }
+      .date{
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
