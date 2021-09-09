@@ -1,38 +1,113 @@
 @import '../util/variables';
 body {
   background-color: #eee;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
+/* 
+**************************************************
+                MAIN
+**************************************************
+ */
 main {
   font: $font-default;
   color: $color-dark;
   letter-spacing: 0.05rem;
   line-height: 1.15;
-  width: $width-cv;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row-reverse;
+  display: grid;
+  grid-template-columns: repeat(5, $size-grid-column);
+  grid-template-rows: 5.3rem auto auto;
+  justify-content: center;
+  align-content: center;
 
+  nav {
+    background-color: $color-dark;
+    grid-column: 1 / span 4;
+    grid-row: 1 / 2;
+
+    .content {
+      height: 100%;
+      display: flex;
+      list-style: none;
+      padding: 0.5rem 4rem;
+      align-items: center;
+      li {
+        color: $color-light-2;
+        background-color: darken($color-light-1, 50%);
+        border-radius: 0 100rem;
+        margin: 0 1rem;
+        padding: 0.4rem 1.5rem;
+        transition: all 0.7s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          height: 2.5rem;
+          margin-right: 0.7rem;
+          fill: $color-light-2;
+        }
+        &:hover {
+          cursor: pointer;
+          color: $color-dark;
+          background-color: $color-light-1;
+          svg {
+            fill: $color-dark;
+          }
+        }
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+      .active {
+        color: $color-dark;
+        background-color: $color-light-1;
+        svg {
+          fill: $color-dark;
+        }
+      }
+    }
+  }
+  /* 
+**************************************************
+                  ASIDE
+**************************************************
+ */
   aside {
-    padding: 3rem 5rem;
-    width: $width-aside;
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    padding: 3rem 3.5rem;
     background-color: $color-dark-light;
     color: $color-light-1;
     h3 {
-      font-size: 2rem;
+      font-size: $font-header-3;
       margin: 2rem 0;
     }
     ul {
       list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-gap: 1rem;
       li {
         display: flex;
         flex-direction: column;
-        margin-bottom: 1.1rem;
+        a {
+          text-decoration: none;
+          color: $color-light-1;
+
+          &:hover {
+            color: lighten($color-light-1, 20%);
+          }
+        }
 
         .level {
           margin-top: 0.5rem;
           height: 1rem;
           width: 15rem;
-
           &.js {
             background: linear-gradient(to right, $color-light-2 0% 45%, $color-dark 45% 100%);
           }
@@ -48,26 +123,36 @@ main {
           &.git {
             background: linear-gradient(to right, $color-light-2 0% 25%, $color-dark 25% 100%);
           }
+          &.gitHub {
+            background: linear-gradient(to right, $color-light-2 0% 30%, $color-dark 30% 100%);
+          }
           &.markdown {
             background: linear-gradient(to right, $color-light-2 0% 70%, $color-dark 70% 100%);
           }
           &.vscode {
             background: linear-gradient(to right, $color-light-2 0% 40%, $color-dark 40% 100%);
           }
+          &.figma {
+            background: linear-gradient(to right, $color-light-2 0% 20%, $color-dark 20% 100%);
+          }
         }
       }
     }
   }
-
+  /* 
+**************************************************
+                SECTIONS
+**************************************************
+ */
   .wrapper {
-    width: $width-cv - $width-aside;
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    position: relative;
     padding: $padding-default;
-    margin: 0 auto;
     background-color: $color-light-1;
-
     h3 {
-      font-size: 2rem;
-      margin: 2rem 0;
+      font-size: $font-header-3;
+      margin: 1rem 0;
       &:first-of-type {
         margin-top: 0;
       }
@@ -86,6 +171,222 @@ main {
       }
       &:last-of-type {
         border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+    .code-examples {
+      .code-samples {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 1rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 0.1rem solid darken($color-light-1, 10%);
+        li {
+          padding: 0.3rem 0.5rem;
+          border-radius: 20rem;
+          border: 0.1rem solid $color-dark-light;
+          text-align: center;
+
+          &:hover {
+            cursor: pointer;
+            color: lighten($color-light-2, 5%);
+            background-color: darken($color-dark, 20%);
+          }
+        }
+        .more {
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+        .active {
+          color: lighten($color-light-2, 5%);
+          background-color: darken($color-dark, 20%);
+        }
+      }
+    }
+    .education {
+      ul {
+        li {
+          margin-bottom: 1rem;
+          font-style: italic;
+          a {
+            text-decoration: none;
+            color: $color-dark;
+            &:hover {
+              cursor: pointer;
+              color: lighten($color-dark, 50%);
+            }
+          }
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .experience {
+      .experience-list {
+        display: flex;
+        li {
+          margin-right: 2rem;
+          a {
+            text-decoration: none;
+            padding: 0.3rem 1rem;
+            border: 0.1rem solid $color-dark-light;
+            border-radius: 20rem;
+            color: $color-dark;
+            transition: all 0.5s;
+            &:hover {
+              color: lighten($color-light-2, 5%);
+              background-color: darken($color-dark, 20%);
+            }
+          }
+        }
+      }
+      .projects {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 2rem;
+        li {
+          border: 0.1rem solid $color-dark-light;
+          margin-right: 0;
+          padding: 1rem;
+          text-align: center;
+          transition: all 0.3s;
+          a {
+            text-decoration: none;
+            color: inherit;
+
+            h4 {
+              color: inherit;
+              font-size: 2rem;
+            }
+            .image {
+              width: 22rem;
+              margin: 1rem 0;
+              img {
+                width: inherit;
+              }
+            }
+            p {
+              text-align: left;
+              color: inherit;
+              line-height: 1.3;
+            }
+          }
+          &:hover {
+            color: lighten($color-light-2, 5%);
+            background-color: darken($color-dark, 20%);
+          }
+
+          &:hover {
+            transform: scale(135%, 135%);
+            font-size: 85%;
+          }
+        }
+      }
+      .achievments {
+        position: absolute;
+        bottom: 6rem;
+        p {
+          line-height: 1.3;
+          a {
+            text-decoration: none;
+            border: 0.1rem solid $color-dark-light;
+            color: $color-dark;
+            font-style: italic;
+            padding: 0.3rem 0.5rem;
+            border-radius: 50rem;
+
+            &:hover {
+              color: lighten($color-light-2, 5%);
+              background-color: darken($color-dark, 20%);
+            }
+          }
+          &:first-of-type {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 930px) and (max-width: 1100px) {
+  main {
+    grid-template-columns: repeat(5, 18.5rem);
+    nav {
+      .content {
+        padding: 0.5rem 2.5rem;
+      }
+    }
+
+    aside {
+      padding: 3rem 1.5rem;
+    }
+    .wrapper {
+      padding: 2.5rem;
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 930px) {
+  main {
+    grid-template-columns: repeat(5, 15rem);
+    nav {
+      grid-column: 1 / span 5;
+      grid-row: 1 / 2;
+    }
+    .wrapper {
+      grid-column: 1 / span 5;
+      grid-row: 2;
+    }
+    aside {
+      padding: 1rem 2rem;
+      grid-column: 1 / span 5;
+      grid-row: 3;
+      h3 {
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      ul {
+        grid-template-columns: repeat(5, auto);
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        grid-gap: 1rem 2rem;
+        li {
+          .level {
+            width: 12rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 450px) and (max-width: 750px) {
+  main {
+    grid-template-columns: repeat(5, 13rem);
+    overflow: hidden;
+    nav {
+      .content {
+        padding: 1rem;
+      }
+    }
+    .wrapper {
+      padding: 1rem;
+    }
+    aside {
+      h3 {
+        margin: 0.3rem 0;
+      }
+      ul {
+        grid-template-columns: repeat(3, auto);
       }
     }
   }

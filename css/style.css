@@ -12,13 +12,14 @@ body {
   box-sizing: border-box; }
 
 footer {
-  font: 1.4rem "Lato", sans-serif;
-  color: #dfdfdf;
   width: 110rem;
-  margin: 0 auto; }
+  font: 1.6rem "Lato", sans-serif;
+  color: #dfdfdf;
+  margin: 0 auto;
+  z-index: 100; }
   footer .wrapper {
-    background-color: #0B0C10;
-    padding: 1.5rem 3rem; }
+    background-color: #0b0c10;
+    padding: 1rem 3rem; }
   footer ul {
     list-style: none;
     display: flex;
@@ -34,41 +35,58 @@ footer {
         align-items: center; }
         footer ul li a:visited, footer ul li a:active {
           text-decoration: none; }
+        footer ul li a:hover {
+          color: white; }
         footer ul li a svg {
           height: 3rem;
           margin-right: 1rem;
-          fill: #66FCF1; }
+          fill: #66fcf1; }
       footer ul li .date {
         margin-bottom: 0.5rem; }
 
+@media (min-width: 450px) and (max-width: 1100px) {
+  footer {
+    width: 92.5rem; }
+    footer .wrapper {
+      padding: 1rem 2.5rem; } }
+
+@media (min-width: 450px) and (max-width: 930px) {
+  footer {
+    width: 75rem; } }
+
+@media (min-width: 450px) and (max-width: 750px) {
+  footer {
+    width: 65rem; }
+    footer .wrapper {
+      padding: 1rem; } }
+
 header {
-  font: 1.4rem "Lato", sans-serif;
+  width: 110rem;
+  font: 1.6rem "Lato", sans-serif;
   letter-spacing: 0.05rem;
   line-height: 1.15;
   color: #dfdfdf;
-  width: 110rem;
-  margin: 0 auto; }
+  margin-top: 0.5rem; }
   header .wrapper {
-    background-color: #1F2833;
+    background-color: #1f2833;
     display: flex;
     justify-content: space-between; }
   header .image {
     text-align: center;
-    background-color: #fcfcfc;
-    width: 25rem;
-    height: 19rem; }
+    background-color: #1f2833;
+    height: 16.8rem;
+    width: 22rem; }
     header .image img {
       height: inherit; }
   header .info {
-    padding: 3rem;
-    width: fit-content;
-    width: 85rem; }
+    padding: 2rem 4rem;
+    height: max-content; }
   header h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: #66FCF1; }
+    color: #66fcf1; }
   header h3 {
-    color: #66FCF1;
+    color: #66fcf1;
     font-size: 2rem;
     margin-bottom: 1rem; }
   header ul {
@@ -88,62 +106,158 @@ header {
       header ul li a svg {
         width: 2rem;
         margin-right: 1rem;
-        fill: #66FCF1; }
+        fill: #66fcf1; }
       header ul li a:active, header ul li a:visited {
         text-decoration: none; }
+      header ul li a:hover {
+        color: #f9f9f9; }
+
+@media (min-width: 450px) and (max-width: 1100px) {
+  header {
+    width: 92.5rem; }
+    header .info {
+      padding: 2rem 2.5rem; }
+    header .image {
+      height: 19.3rem; }
+    header ul {
+      grid-template-columns: repeat(2, auto);
+      grid-gap: 0.5rem 1rem; }
+      header ul li:first-of-type {
+        grid-column-start: span 2; } }
+
+@media (min-width: 450px) and (max-width: 930px) {
+  header {
+    width: 75rem; } }
+
+@media (min-width: 450px) and (max-width: 750px) {
+  header {
+    width: 65rem; }
+    header .info {
+      padding: 1rem; } }
 
 body {
   background-color: #eee; }
+  body .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
+/* 
+**************************************************
+                MAIN
+**************************************************
+ */
 main {
-  font: 1.4rem "Lato", sans-serif;
-  color: #0B0C10;
+  font: 1.6rem "Lato", sans-serif;
+  color: #0b0c10;
   letter-spacing: 0.05rem;
   line-height: 1.15;
-  width: 110rem;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row-reverse; }
+  display: grid;
+  grid-template-columns: repeat(5, 22rem);
+  grid-template-rows: 5.3rem auto auto;
+  justify-content: center;
+  align-content: center;
+  /* 
+**************************************************
+                  ASIDE
+**************************************************
+ */
+  /* 
+**************************************************
+                SECTIONS
+**************************************************
+ */ }
+  main nav {
+    background-color: #0b0c10;
+    grid-column: 1 / span 4;
+    grid-row: 1 / 2; }
+    main nav .content {
+      height: 100%;
+      display: flex;
+      list-style: none;
+      padding: 0.5rem 4rem;
+      align-items: center; }
+      main nav .content li {
+        color: #66fcf1;
+        background-color: #606060;
+        border-radius: 0 100rem;
+        margin: 0 1rem;
+        padding: 0.4rem 1.5rem;
+        transition: all 0.7s;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        main nav .content li svg {
+          height: 2.5rem;
+          margin-right: 0.7rem;
+          fill: #66fcf1; }
+        main nav .content li:hover {
+          cursor: pointer;
+          color: #0b0c10;
+          background-color: #dfdfdf; }
+          main nav .content li:hover svg {
+            fill: #0b0c10; }
+        main nav .content li:first-of-type {
+          margin-left: 0; }
+      main nav .content .active {
+        color: #0b0c10;
+        background-color: #dfdfdf; }
+        main nav .content .active svg {
+          fill: #0b0c10; }
   main aside {
-    padding: 3rem 5rem;
-    width: 25rem;
-    background-color: #1F2833;
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    padding: 3rem 3.5rem;
+    background-color: #1f2833;
     color: #dfdfdf; }
     main aside h3 {
       font-size: 2rem;
       margin: 2rem 0; }
     main aside ul {
-      list-style-type: none; }
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      grid-gap: 1rem; }
       main aside ul li {
         display: flex;
-        flex-direction: column;
-        margin-bottom: 1.1rem; }
+        flex-direction: column; }
+        main aside ul li a {
+          text-decoration: none;
+          color: #dfdfdf; }
+          main aside ul li a:hover {
+            color: white; }
         main aside ul li .level {
           margin-top: 0.5rem;
           height: 1rem;
           width: 15rem; }
           main aside ul li .level.js {
-            background: linear-gradient(to right, #66FCF1 0% 45%, #0B0C10 45% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 45%, #0b0c10 45% 100%); }
           main aside ul li .level.css3 {
-            background: linear-gradient(to right, #66FCF1 0% 70%, #0B0C10 70% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 70%, #0b0c10 70% 100%); }
           main aside ul li .level.sass {
-            background: linear-gradient(to right, #66FCF1 0% 50%, #0B0C10 50% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 50%, #0b0c10 50% 100%); }
           main aside ul li .level.html5 {
-            background: linear-gradient(to right, #66FCF1 0% 75%, #0B0C10 75% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 75%, #0b0c10 75% 100%); }
           main aside ul li .level.git {
-            background: linear-gradient(to right, #66FCF1 0% 25%, #0B0C10 25% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 25%, #0b0c10 25% 100%); }
+          main aside ul li .level.gitHub {
+            background: linear-gradient(to right, #66fcf1 0% 30%, #0b0c10 30% 100%); }
           main aside ul li .level.markdown {
-            background: linear-gradient(to right, #66FCF1 0% 70%, #0B0C10 70% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 70%, #0b0c10 70% 100%); }
           main aside ul li .level.vscode {
-            background: linear-gradient(to right, #66FCF1 0% 40%, #0B0C10 40% 100%); }
+            background: linear-gradient(to right, #66fcf1 0% 40%, #0b0c10 40% 100%); }
+          main aside ul li .level.figma {
+            background: linear-gradient(to right, #66fcf1 0% 20%, #0b0c10 20% 100%); }
   main .wrapper {
-    width: 85rem;
-    padding: 3rem;
-    margin: 0 auto;
+    grid-column: 1 / span 4;
+    grid-row: 2;
+    position: relative;
+    padding: 2rem 4rem;
     background-color: #dfdfdf; }
     main .wrapper h3 {
       font-size: 2rem;
-      margin: 2rem 0; }
+      margin: 1rem 0; }
       main .wrapper h3:first-of-type {
         margin-top: 0; }
     main .wrapper ul {
@@ -156,4 +270,150 @@ main {
       main .wrapper section:first-of-type {
         padding-top: 0; }
       main .wrapper section:last-of-type {
-        border-bottom: none; }
+        border-bottom: none;
+        padding-bottom: 0; }
+    main .wrapper .code-examples .code-samples {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-gap: 1rem;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 0.1rem solid #c6c6c6; }
+      main .wrapper .code-examples .code-samples li {
+        padding: 0.3rem 0.5rem;
+        border-radius: 20rem;
+        border: 0.1rem solid #1f2833;
+        text-align: center; }
+        main .wrapper .code-examples .code-samples li:hover {
+          cursor: pointer;
+          color: #7ffcf3;
+          background-color: black; }
+      main .wrapper .code-examples .code-samples .more a {
+        text-decoration: none;
+        color: inherit; }
+      main .wrapper .code-examples .code-samples .active {
+        color: #7ffcf3;
+        background-color: black; }
+    main .wrapper .education ul li {
+      margin-bottom: 1rem;
+      font-style: italic; }
+      main .wrapper .education ul li a {
+        text-decoration: none;
+        color: #0b0c10; }
+        main .wrapper .education ul li a:hover {
+          cursor: pointer;
+          color: #7880a2; }
+      main .wrapper .education ul li:last-of-type {
+        margin-bottom: 0; }
+    main .wrapper .experience .experience-list {
+      display: flex; }
+      main .wrapper .experience .experience-list li {
+        margin-right: 2rem; }
+        main .wrapper .experience .experience-list li a {
+          text-decoration: none;
+          padding: 0.3rem 1rem;
+          border: 0.1rem solid #1f2833;
+          border-radius: 20rem;
+          color: #0b0c10;
+          transition: all 0.5s; }
+          main .wrapper .experience .experience-list li a:hover {
+            color: #7ffcf3;
+            background-color: black; }
+    main .wrapper .experience .projects {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-gap: 2rem; }
+      main .wrapper .experience .projects li {
+        border: 0.1rem solid #1f2833;
+        margin-right: 0;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s; }
+        main .wrapper .experience .projects li a {
+          text-decoration: none;
+          color: inherit; }
+          main .wrapper .experience .projects li a h4 {
+            color: inherit;
+            font-size: 2rem; }
+          main .wrapper .experience .projects li a .image {
+            width: 22rem;
+            margin: 1rem 0; }
+            main .wrapper .experience .projects li a .image img {
+              width: inherit; }
+          main .wrapper .experience .projects li a p {
+            text-align: left;
+            color: inherit;
+            line-height: 1.3; }
+        main .wrapper .experience .projects li:hover {
+          color: #7ffcf3;
+          background-color: black; }
+        main .wrapper .experience .projects li:hover {
+          transform: scale(135%, 135%);
+          font-size: 85%; }
+    main .wrapper .experience .achievments {
+      position: absolute;
+      bottom: 6rem; }
+      main .wrapper .experience .achievments p {
+        line-height: 1.3; }
+        main .wrapper .experience .achievments p a {
+          text-decoration: none;
+          border: 0.1rem solid #1f2833;
+          color: #0b0c10;
+          font-style: italic;
+          padding: 0.3rem 0.5rem;
+          border-radius: 50rem; }
+          main .wrapper .experience .achievments p a:hover {
+            color: #7ffcf3;
+            background-color: black; }
+        main .wrapper .experience .achievments p:first-of-type {
+          margin-bottom: 2rem; }
+
+@media (min-width: 930px) and (max-width: 1100px) {
+  main {
+    grid-template-columns: repeat(5, 18.5rem); }
+    main nav .content {
+      padding: 0.5rem 2.5rem; }
+    main aside {
+      padding: 3rem 1.5rem; }
+    main .wrapper {
+      padding: 2.5rem; } }
+
+@media (min-width: 450px) and (max-width: 930px) {
+  main {
+    grid-template-columns: repeat(5, 15rem); }
+    main nav {
+      grid-column: 1 / span 5;
+      grid-row: 1 / 2; }
+    main .wrapper {
+      grid-column: 1 / span 5;
+      grid-row: 2; }
+    main aside {
+      padding: 1rem 2rem;
+      grid-column: 1 / span 5;
+      grid-row: 3; }
+      main aside h3 {
+        text-align: center;
+        margin: 1rem 0; }
+      main aside ul {
+        grid-template-columns: repeat(5, auto);
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        grid-gap: 1rem 2rem; }
+        main aside ul li .level {
+          width: 12rem; } }
+
+@media (min-width: 450px) and (max-width: 750px) {
+  main {
+    grid-template-columns: repeat(5, 13rem);
+    overflow: hidden; }
+    main nav .content {
+      padding: 1rem; }
+    main .wrapper {
+      padding: 1rem; }
+    main aside h3 {
+      margin: 0.3rem 0; }
+    main aside ul {
+      grid-template-columns: repeat(3, auto); } }
