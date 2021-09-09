@@ -331,20 +331,19 @@
           </section>
           <section class="code-examples">
             <h3>My code examples</h3>
-<pre>
-// Find next prime
+<pre>// Find next prime
 function nextPrime(n){
-  const isPrime = num => {
-  for (let i = 2; i*i <= num; i++)
+ const isPrime = num => {
+ for (let i = 2; i*i <= num; i++)
   { if (num % i === 0) return false }
   return num > 1;
-  };
-  for (let i = n + 1; ; i++) {
+ };
+ for (let i = n + 1; ; i++) {
   const result = isPrime(i);
   if (result) return i;
-  }
-}</pre
->
+ }
+} </pre>
+
           </section>
           <section class="experience">
             <h3>My projects</h3>

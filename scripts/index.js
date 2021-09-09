@@ -27,16 +27,17 @@ const contentAboutRender = `
 </section>
 <section class="code-examples">
 	<h3>My code examples</h3>
-	<pre>
+<pre>// Find next prime
 function nextPrime(n){
-  const isPrime = num => {
-    for (let i = 2; i*i <= num; i++) if (num % i === 0) return false;
-    return num > 1;
-  };
-  for (let i = n + 1; ; i++) {
-    const result = isPrime(i);
-    if (result) return i;
-  }
+ const isPrime = num => {
+ for (let i = 2; i*i <= num; i++)
+  { if (num % i === 0) return false }
+  return num > 1;
+ };
+ for (let i = n + 1; ; i++) {
+  const result = isPrime(i);
+  if (result) return i;
+ }
 } </pre>
 </section>
 <section class="experience">
@@ -93,29 +94,30 @@ function nextPrime(n){
 `;
 const contentCodeRender = `
 <section class="code-examples">
-            <h3>My code examples</h3>
-            <ul class="code-samples">
-              <li class="nextPrime active">Find next prime</li>
-              <li class="hexConversion">RGB To Hex Conversion</li>
-              <li class="elementEqualsIndex">Element equals its index</li>
-              <li class="rotateMatrix">Rotate Matrix</li>
-              <li class="doArithmetic">Function that does arithmetic</li>
-              <li class="creditCardMask">Credit Card Mask</li>
-              <li class="whosOnline">Who's Online?</li>
-              <li class="euclideanDistance">Euclidean distance in n dimensions</li>
-              <li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account<</a></li>
-            </ul>
-            <pre class="insert-code">
-function nextPrime(n){
-  const isPrime = num => {
-    for (let i = 2; i*i <= num; i++) if (num % i === 0) return false;
-    return num > 1;
-  };
-  for (let i = n + 1; ; i++) {
-    const result = isPrime(i);
-    if (result) return i;
-  }
-} </pre>
+<h3>My code examples</h3>
+<ul class="code-samples">
+	<li class="nextPrime active">Find next prime</li>
+	<li class="hexConversion">RGB To Hex Conversion</li>
+	<li class="elementEqualsIndex">Element equals its index</li>
+	<li class="rotateMatrix">Rotate Matrix</li>
+	<li class="doArithmetic">Function that does arithmetic</li>
+	<li class="creditCardMask">Credit Card Mask</li>
+	<li class="whosOnline">Who's Online?</li>
+	<li class="euclideanDistance">Euclidean distance in n dimensions</li>
+	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account<</a></li>
+</ul>
+<pre class="insert-code">// Find next prime
+ function nextPrime(n){
+ const isPrime = num => {
+ for (let i = 2; i*i <= num; i++)
+  { if (num % i === 0) return false }
+  return num > 1;
+ };
+ for (let i = n + 1; ; i++) {
+  const result = isPrime(i);
+   if (result) return i;
+ }
+}</pre>
 </section>
 `;
 
