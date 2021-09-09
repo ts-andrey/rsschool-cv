@@ -30,7 +30,7 @@ const contentAboutRender = `
 <pre>// Find next prime
 function nextPrime(n){
  const isPrime = num => {
- for (let i = 2; i*i <= num; i++)
+ for (let i = 2; i*i &lt;= num; i++)
   { if (num % i === 0) return false }
   return num > 1;
  };
@@ -74,19 +74,19 @@ function nextPrime(n){
 		<li>
 			<h4>JavaScript/Front-end (basics)</h4>
 			<a href="https://rs.school/js-stage0/" target="_blank"
-				>The Rolling Scopes School <time datetime="09-2021">2021</time></a
+				>The Rolling Scopes School <time datetime="2021-09">2021</time></a
 			>
 		</li>
 		<li>
 			<h4>Master of science in electiral engeneering</h4>
 			<a href="https://en.gstu.by/faculties/power-engineering-faculty" target="_blank"
-				>Sukhoi State Technical University Of Gomel <time datetime="01-2016">2014-2016</time></a
+				>Sukhoi State Technical University Of Gomel <time datetime="2016-01">2014-2016</time></a
 			>
 		</li>
 		<li>
 			<h4>Bachelor of science in electiral engeneering</h4>
 			<a href="https://en.gstu.by/faculties/power-engineering-faculty" target="_blank"
-				>Sukhoi State Technical University Of Gomel <time datetime="07-2014">2009-2014</time></a
+				>Sukhoi State Technical University Of Gomel <time datetime="2014-07">2009-2014</time></a
 			>
 		</li>
 	</ul>
@@ -104,12 +104,12 @@ const contentCodeRender = `
 	<li class="creditCardMask">Credit Card Mask</li>
 	<li class="whosOnline">Who's Online?</li>
 	<li class="euclideanDistance">Euclidean distance in n dimensions</li>
-	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account<</a></li>
+	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account&lt;</a></li>
 </ul>
 <pre class="insert-code">// Find next prime
  function nextPrime(n){
  const isPrime = num => {
- for (let i = 2; i*i <= num; i++)
+ for (let i = 2; i*i &lt;= num; i++)
   { if (num % i === 0) return false }
   return num > 1;
  };
@@ -178,7 +178,7 @@ const contentProjectsRender = `
 const codeSampleNextPrime = `// Find next prime
 function nextPrime(n){
  const isPrime = num => {
-  for (let i = 2; i*i <= num; i++)
+  for (let i = 2; i*i &lt;= num; i++)
   { if (num % i === 0) return false }
   return num > 1;
 };
@@ -208,8 +208,8 @@ const hexValues = {
 };
 const normalizer = num => {
 	let result = num;
-	if (result <= 0) result = 0;
-	if (result >= 15) result = 15;
+	if (result &lt;= 0) result = 0;
+	if (result &gt;= 15) result = 15;
 	return result;
 };
 const converter = num => {
@@ -228,19 +228,19 @@ const range1 = Math.floor(array.length / 4);
 const range2 = range1 * 2;
 const range3 = range1 * 3;
 
-if (array[range2] >= range2) {
- if (array[range1] >= range1) {
-  for (let i = 0; i <= range1; i++){
+if (array[range2] &gt;= range2) {
+ if (array[range1] &gt;= range1) {
+  for (let i = 0; i &lt;= range1; i++){
    if (array[i] === i) return i;
   }
  } else if (array[range1] < range1) {
-  for (let i = range1; i <= range2; i++){
+  for (let i = range1; i &lt;= range2; i++){
    if (array[i] === i) return i;
   }
  }
  } else if (array[range2] < range2) {
-  if (array[range3] >= range3) {
-   for (let i = range2; i <= range3; i++){
+  if (array[range3] &gt;= range3) {
+   for (let i = range2; i &lt;= range3; i++){
     if (array[i] === i) return i;
    }
   } else if (array[range3] < range3) {
@@ -249,7 +249,7 @@ if (array[range2] >= range2) {
   }
  }
 } else {
- for (let i = 0; i <= array.length; i++) {
+ for (let i = 0; i &lt;= array.length; i++) {
   if (array[i] === i) return i;
  }
 }
@@ -291,7 +291,7 @@ const codeSampleWhosOnline = `// Who's Online?
  for (let i = 0; i < friends.length; i++){
   friends[i].status === 'offline'
    ? resultObj['offline'].push(friends[i].username)
-   : friends[i].lastActivity <= 10
+   : friends[i].lastActivity &lt;= 10
     ? resultObj['online'].push(friends[i].username)
     : resultObj['away'].push(friends[i].username);
  }
