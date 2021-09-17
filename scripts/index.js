@@ -106,18 +106,19 @@ const contentCodeRender = `
 	<li class="euclideanDistance">Euclidean distance in n dimensions</li>
 	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account&lt;</a></li>
 </ul>
-<pre class="insert-code">// Find next prime
- function nextPrime(n){
+<pre><code class="insert-code">// Find next prime
+function nextPrime(n){
  const isPrime = num => {
- for (let i = 2; i*i &lt;= num; i++)
-  { if (num % i === 0) return false }
+  for (let i = 2; i*i &lt;= num; i++)
+   { if (num % i === 0) return false }
   return num > 1;
  };
  for (let i = n + 1; ; i++) {
   const result = isPrime(i);
-   if (result) return i;
+  if (result) return i;
  }
-}</pre>
+}
+</code></pre>
 </section>
 `;
 
@@ -179,9 +180,9 @@ const codeSampleNextPrime = `// Find next prime
 function nextPrime(n){
  const isPrime = num => {
   for (let i = 2; i*i &lt;= num; i++)
-  { if (num % i === 0) return false }
+   { if (num % i === 0) return false }
   return num > 1;
-};
+ };
  for (let i = n + 1; ; i++) {
   const result = isPrime(i);
   if (result) return i;
@@ -189,38 +190,38 @@ function nextPrime(n){
 }`;
 const codeSampleHexConversion = `// RGB To Hex Conversion
 const hexValues = {
-	0: 0,
-	1: 1,
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5,
-	6: 6,
-	7: 7,
-	8: 8,
-	9: 9,
-	10: 'A',
-	11: 'B',
-	12: 'C',
-	13: 'D',
-	14: 'E',
-	15: 'F',
+ 0: 0,
+ 1: 1,
+ 2: 2,
+ 3: 3,
+ 4: 4,
+ 5: 5,
+ 6: 6,
+ 7: 7,
+ 8: 8,
+ 9: 9,
+ 10: 'A',
+ 11: 'B',
+ 12: 'C',
+ 13: 'D',
+ 14: 'E',
+ 15: 'F',
 };
 const normalizer = num => {
-	let result = num;
-	if (result &lt;= 0) result = 0;
-	if (result &gt;= 15) result = 15;
-	return result;
+ let result = num;
+ if (result &lt;= 0) result = 0;
+ if (result &gt;= 15) result = 15;
+ return result;
 };
 const converter = num => {
-	let whole = Math.floor(num / 16);
-	whole = normalizer(whole);
-	let remainder = num - whole * 16;
-	remainder = normalizer(remainder);
-	return '$_{hexValues[whole]}$_{hexValues[remainder]}';
+ let whole = Math.floor(num / 16);
+ whole = normalizer(whole);
+ let remainder = num - whole * 16;
+ remainder = normalizer(remainder);
+ return '$_{hexValues[whole]}$_{hexValues[remainder]}';
 };
 const rgb = (r, g, b) => {
-	return '$_{converter(r)}$_{converter(g)}$_{converter(b)}';
+ return '$_{converter(r)}$_{converter(g)}$_{converter(b)}';
 };`;
 const codeSampleElementEqualsIndex = `// Element equals its index
 const indexEqualsValue = (array) => {
@@ -260,9 +261,9 @@ const rotateMatrix = (array) => {
  const resultArray = [];
  for (let j = array[0].length - 1; j >= 0; j--) {
   const tempArray = [];
-   for (let i = 0; i < array.length; i++) {
-	  tempArray.push(array[i][j]);
-   }
+  for (let i = 0; i < array.length; i++) {
+   tempArray.push(array[i][j]);
+  }
   resultArray.push(tempArray);
  }
  return resultArray;
@@ -360,5 +361,3 @@ function renderContentHandler() {
 content.forEach(el => {
   el.addEventListener('click', renderContentHandler);
 });
-
-// console.log(codeSamples);
