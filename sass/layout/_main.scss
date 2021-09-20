@@ -48,7 +48,7 @@ main {
         border-radius: 0 100rem;
         margin: 0 1rem;
         padding: 0.4rem 1.5rem;
-        transition: all 0.7s;
+        transition: all 0.5s;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -353,6 +353,10 @@ main {
     nav {
       .content {
         padding: 0.5rem 2.5rem;
+        li {
+          margin: 0 1rem;
+          padding: 0.4rem 1rem;
+        }
       }
     }
 
@@ -476,6 +480,10 @@ main {
     nav {
       .content {
         padding: 0.5rem 0.5rem;
+        li {
+          margin: 0 0.3rem;
+          padding: 0.4rem 0.9rem;
+        }
       }
     }
 
@@ -578,7 +586,7 @@ main {
         }
       }
       &.view {
-        height: 9rem;
+        height: 12rem;
       }
     }
 
