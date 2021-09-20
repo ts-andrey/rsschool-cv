@@ -6,18 +6,22 @@ header {
   line-height: 1.15;
   color: $color-light-1;
   margin-top: 0.5rem;
-
+  overflow: hidden;
   .wrapper {
     background-color: $color-dark-light;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     justify-content: space-between;
   }
 
   .image {
+    padding-right: 2.5rem;
     text-align: center;
     background-color: $color-dark-light;
     height: 16.8rem;
-    width: $size-grid-column;
+    width: min-content;
+    position: relative;
+    z-index: 10;
     img {
       height: inherit;
     }
@@ -26,8 +30,8 @@ header {
   .info {
     padding: $padding-default;
     height: max-content;
+    z-index: 100;
   }
-
   h1 {
     font-size: $font-header-1;
     margin-bottom: 1rem;
@@ -73,7 +77,7 @@ header {
   }
 }
 
-@media (min-width: 450px) and (max-width: 1100px) {
+@media screen and (min-width: 0px) and (max-width: 1150px) {
   header {
     width: 18.5rem * 5;
 
@@ -82,8 +86,9 @@ header {
     }
 
     .image {
+      padding: 0;
       height: 19.3rem;
- 
+      width: 100%;
     }
 
     ul {
@@ -99,17 +104,87 @@ header {
   }
 }
 
-@media (min-width: 450px) and (max-width: 930px) {
+@media screen and (min-width: 0px) and (max-width: 950px) {
   header {
     width: 15rem * 5;
+    .image {
+      padding: 0;
+      img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
   }
 }
-@media (min-width: 450px) and (max-width: 750px) {
+@media screen and (min-width: 0px) and (max-width: 780px) {
   header {
-    width: 13rem * 5;
+    width: 95vw;
+
+    .image {
+      height: 16rem;
+      img {
+        height: 16rem;
+      }
+    }
 
     .info {
       padding: 1rem;
+    }
+    h1 {
+      font-size: 2.9rem;
+    }
+    h3 {
+      font-size: 1.85rem;
+    }
+    ul {
+      li {
+        a {
+          svg {
+            width: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 680px) {
+  header {
+    font-size: 1.2rem;
+    .image {
+      height: 19rem;
+      img {
+        height: 18rem;
+      }
+    }
+    ul {
+      grid-template-columns: repeat(1, auto);
+      li {
+        &:first-of-type {
+          grid-column-start: 1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  header{
+    .image{
+      img{
+        height: 13rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 239px) {
+  header{
+    .image{
+      img{
+        top:0;
+        border-radius: 50%;
+        height: 10rem;
+      }
     }
   }
 }
