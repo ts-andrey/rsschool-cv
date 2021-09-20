@@ -41,20 +41,20 @@ footer {
         footer .wrapper ul li .date {
           margin-bottom: 0.5rem; }
 
-@media (min-width: 0px) and (max-width: 1100px) {
+@media (min-width: 0px) and (max-width: 1150px) {
   footer {
     width: 92.5rem; }
     footer .wrapper {
       padding: 1rem 2.5rem; } }
 
-@media (min-width: 0px) and (max-width: 930px) {
+@media (min-width: 0px) and (max-width: 950px) {
   footer {
     width: 75rem; } }
 
-@media (min-width: 0px) and (max-width: 750px) {
+@media (min-width: 0px) and (max-width: 780px) {
   footer {
     font-size: 1.2rem;
-    width: 100vw; }
+    width: 95vw; }
     footer .wrapper {
       padding: 1rem; }
       footer .wrapper ul li a svg {
@@ -99,6 +99,7 @@ header {
     grid-template-columns: repeat(2, auto);
     justify-content: space-between; }
   header .image {
+    padding-right: 2.5rem;
     text-align: center;
     background-color: #1f2833;
     height: 16.8rem;
@@ -142,12 +143,13 @@ header {
       header ul li a:hover {
         color: #f9f9f9; }
 
-@media screen and (min-width: 0px) and (max-width: 1100px) {
+@media screen and (min-width: 0px) and (max-width: 1150px) {
   header {
     width: 92.5rem; }
     header .info {
       padding: 2rem 2.5rem; }
     header .image {
+      padding: 0;
       height: 19.3rem;
       width: 100%; }
     header ul {
@@ -156,17 +158,23 @@ header {
       header ul li:first-of-type {
         grid-column-start: span 2; } }
 
-@media screen and (min-width: 0px) and (max-width: 930px) {
+@media screen and (min-width: 0px) and (max-width: 950px) {
   header {
     width: 75rem; }
-    header .image img {
-      position: absolute;
-      bottom: 0;
-      right: 0; } }
+    header .image {
+      padding: 0; }
+      header .image img {
+        position: absolute;
+        bottom: 0;
+        right: 0; } }
 
-@media screen and (min-width: 0px) and (max-width: 750px) {
+@media screen and (min-width: 0px) and (max-width: 780px) {
   header {
-    width: 100vw; }
+    width: 95vw; }
+    header .image {
+      height: 16rem; }
+      header .image img {
+        height: 16rem; }
     header .info {
       padding: 1rem; }
     header h1 {
@@ -176,11 +184,11 @@ header {
     header ul li a svg {
       width: 1.5rem; } }
 
-@media screen and (min-width: 0px) and (max-width: 650px) {
+@media screen and (min-width: 0px) and (max-width: 680px) {
   header {
     font-size: 1.2rem; }
     header .image {
-      height: 23.9rem; }
+      height: 19rem; }
       header .image img {
         height: 18rem; }
     header ul {
@@ -204,7 +212,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    width: min-content;
+    margin: 0 auto; }
 
 /* 
 **************************************************
@@ -263,11 +273,13 @@ main {
             fill: #0b0c10; }
         main nav .content li:first-of-type {
           margin-left: 0; }
-      main nav .content .active {
-        color: #0b0c10;
-        background-color: #dfdfdf; }
-        main nav .content .active svg {
-          fill: #0b0c10; }
+        main nav .content li.active {
+          color: #0b0c10;
+          background-color: #dfdfdf; }
+          main nav .content li.active svg {
+            fill: #0b0c10; }
+    main nav .burger-menu {
+      display: none; }
   main aside {
     grid-column: 5;
     grid-row: 1 / span 2;
@@ -372,7 +384,8 @@ main {
       main .wrapper .education ul li:last-of-type {
         margin-bottom: 0; }
     main .wrapper .experience .experience-list {
-      display: flex; }
+      display: flex;
+      padding-bottom: 1rem; }
       main .wrapper .experience .experience-list li {
         margin-right: 2rem; }
         main .wrapper .experience .experience-list li a {
@@ -389,7 +402,7 @@ main {
       margin-top: 2rem;
       display: grid;
       grid-template-columns: repeat(3, 26rem);
-      grid-template-rows: repeat(1, 35rem);
+      grid-template-rows: 37.5rem 11rem;
       grid-gap: 2rem; }
       main .wrapper .experience .projects li {
         border: 0.1rem solid #1f2833;
@@ -420,7 +433,7 @@ main {
           font-size: 85%; }
     main .wrapper .experience .achievments {
       position: absolute;
-      bottom: 0.6rem; }
+      bottom: 1.6rem; }
       main .wrapper .experience .achievments p {
         line-height: 1.3; }
         main .wrapper .experience .achievments p a {
@@ -439,8 +452,19 @@ main {
             background-color: black; }
         main .wrapper .experience .achievments p:first-of-type {
           margin-bottom: 1rem; }
+    main .wrapper .video {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      main .wrapper .video h3 {
+        margin-top: 5rem;
+        margin-bottom: 2rem; }
+      main .wrapper .video .player {
+        width: 500px;
+        height: 315px; }
 
-@media screen and (min-width: 930px) and (max-width: 1100px) {
+@media screen and (min-width: 0px) and (max-width: 1150px) {
   main {
     grid-template-columns: repeat(5, 18.5rem); }
     main nav .content {
@@ -451,7 +475,7 @@ main {
       padding: 2.5rem; }
       main .wrapper .experience .projects {
         grid-template-columns: repeat(2, 33rem);
-        grid-template-rows: repeat(2, 37rem);
+        grid-template-rows: repeat(2, 40rem);
         padding-bottom: 15rem; }
         main .wrapper .experience .projects li:hover {
           transform: scale(105%, 105%);
@@ -461,11 +485,17 @@ main {
         main .wrapper .experience .projects li:last-of-type {
           grid-column: span 2; }
           main .wrapper .experience .projects li:last-of-type .image img {
-            width: 70%; } }
+            width: 70%; }
+      main .wrapper .video {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        main .wrapper .video h3 {
+          margin-top: 5rem;
+          margin-bottom: 2rem; } }
 
-@media screen and (min-width: 0px) and (max-width: 930px) {
-  .container {
-    width: 100vw; }
+@media screen and (min-width: 0px) and (max-width: 950px) {
   main {
     grid-template-columns: repeat(5, 15rem); }
     main nav {
@@ -482,6 +512,9 @@ main {
           font-size: 105%; }
         main .wrapper .experience .projects li:last-of-type {
           grid-column: span 2; }
+      main .wrapper .video h3 {
+        margin-top: 0;
+        margin-bottom: 1rem; }
     main aside {
       padding: 1rem 2rem;
       grid-column: 1 / span 5;
@@ -506,9 +539,9 @@ main {
         display: flex;
         flex-flow: column; } }
 
-@media screen and (min-width: 0px) and (max-width: 750px) {
+@media screen and (min-width: 0px) and (max-width: 780px) {
   main {
-    grid-template-columns: repeat(5, 20vw);
+    grid-template-columns: repeat(5, 19vw);
     overflow: hidden; }
     main nav .content {
       padding: 0.5rem 0.5rem; }
@@ -531,22 +564,71 @@ main {
         grid-column: span 2;
         justify-self: center; } }
 
-@media screen and (min-width: 0px) and (max-width: 650px) {
+@media screen and (min-width: 0px) and (max-width: 680px) {
   main {
-    grid-template-columns: repeat(5, 20vw); }
-    main nav .content {
-      padding: 0.5rem 0.5rem; }
-      main nav .content li {
+    grid-template-rows: repeat(3, auto); }
+    main nav {
+      font-size: 1.4rem;
+      padding: 0;
+      height: 3rem;
+      position: relative;
+      border-top: 1px solid #0b0c10; }
+      main nav .content {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 3rem;
+        line-height: 3rem; }
+        main nav .content li {
+          width: 100%;
+          margin: 0;
+          border-radius: 0;
+          padding: 0;
+          justify-content: flex-start;
+          padding-left: 5%; }
+          main nav .content li svg {
+            height: 1.5rem;
+            margin-right: 0.5rem; }
+          main nav .content li.active {
+            order: -1;
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 5%;
+            height: 3rem;
+            line-height: 3rem;
+            width: 91%; }
+      main nav .burger-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        width: 9%;
+        height: 3rem;
+        line-height: 3rem;
         margin: 0;
-        padding: 0.2rem 0.5rem;
-        width: fit-content; }
-        main nav .content li svg {
-          height: 1.5rem;
-          margin-right: 0.5rem; }
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0;
+        background-color: transparent; }
+        main nav .burger-menu svg {
+          height: 65%;
+          margin: 0;
+          fill: #04c5b7; }
+        main nav .burger-menu:hover {
+          background-color: #939393; }
+          main nav .burger-menu:hover svg {
+            fill: #0b0c10; }
+      main nav.view {
+        height: 9rem; }
     main .wrapper {
+      border-top: 1px solid #0b0c10;
       font-size: 1.3rem; }
       main .wrapper .code-examples {
-        padding: 0; }
+        padding: 0;
+        font-size: 1.2rem; }
         main .wrapper .code-examples .code-samples {
           grid-template-columns: repeat(2, 19rem); }
       main .wrapper .experience .projects {
@@ -563,7 +645,7 @@ main {
         margin: 0 auto; }
     main aside {
       font-size: 1.2rem;
-      width: 100vw;
+      width: 95vw;
       overflow: hidden; }
       main aside h3 {
         font-size: 1.8rem; }
@@ -574,20 +656,11 @@ main {
           grid-column: span 2;
           justify-self: center; } }
 
-@media screen and (min-width: 0px) and (max-width: 450px) {
-  main {
-    grid-template-rows: repeat(3, auto); }
-    main nav .content {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      grid-template-rows: repeat(3, 4rem); }
-      main nav .content li {
-        grid-column: span 2; }
-      main nav .content .active {
-        grid-row: 1;
-        grid-column: 1; } }
-
 @media screen and (min-width: 0px) and (max-width: 400px) {
+  main nav .content li.active {
+    width: 87%; }
+  main nav .burger-menu {
+    width: 13%; }
   main .wrapper .code-examples .code-samples {
     grid-template-columns: repeat(1, 19rem); }
   main .wrapper .experience .experience-list {
@@ -595,17 +668,44 @@ main {
     main .wrapper .experience .experience-list li {
       line-height: 3rem;
       margin: 0; }
-  main aside ul {
-    grid-template-columns: 100vw; }
-    main aside ul li {
-      justify-self: center; }
-      main aside ul li:last-of-type {
-        grid-column: 1; } }
+  main .wrapper .experience .achievments {
+    bottom: 0.3rem; }
+    main .wrapper .experience .achievments p {
+      width: 100%;
+      padding: 0 0.5rem; }
+      main .wrapper .experience .achievments p a {
+        width: fit-content; }
+  main aside ul li {
+    justify-self: center; }
+    main aside ul li a .level {
+      width: 10rem; } }
 
 @media screen and (min-width: 0px) and (max-width: 310px) {
   main .wrapper .experience .projects {
-    padding-bottom: 18rem; } }
+    padding-bottom: 18rem; }
+  main aside ul li a .level {
+    width: 7rem; } }
 
 @media screen and (min-width: 0px) and (max-width: 200px) {
   main .wrapper .experience .projects {
     padding-bottom: 22rem; } }
+
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  main .wrapper .video .player {
+    height: 315px;
+    width: 419px; } }
+
+@media screen and (min-width: 0px) and (max-width: 480px) {
+  main .wrapper .video .player {
+    height: 225px;
+    width: 300px; } }
+
+@media screen and (min-width: 0px) and (max-width: 350px) {
+  main .wrapper .video .player {
+    height: 188px;
+    width: 250px; } }
+
+@media screen and (min-width: 0px) and (max-width: 280px) {
+  main .wrapper .video .player {
+    height: 120px;
+    width: 160px; } }

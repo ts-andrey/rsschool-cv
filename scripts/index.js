@@ -5,11 +5,14 @@ let insertCodePlace;
 
 let codeSamples;
 
+const menu = document.querySelector('.burger-menu');
+const nav = document.querySelector('nav');
+
 const contentAboutRender = `
 <section class="about">
 	<h3>About myself</h3>
 	<p>
-		I am a graduate of Gomel State Technical University and my specialty is electiral engeneering. But in a
+		I am a graduate of Gomel State Technical University and my specialty is power engeneering. But in a
 		long time I was intrested in Information Technologies and I finally found my passion in Front-End field
 		where I got to know JavaScript language, this meeting changed my life.
 	</p>
@@ -27,18 +30,18 @@ const contentAboutRender = `
 </section>
 <section class="code-examples">
 	<h3>My code examples</h3>
-<pre>// Find next prime
+<pre><code>// Find next prime
 function nextPrime(n){
  const isPrime = num => {
- for (let i = 2; i*i &lt;= num; i++)
-  { if (num % i === 0) return false }
+  for (let i=2; i*i &lt;= num; i++)
+   if (num % i === 0) return false
   return num > 1;
- };
+  };
  for (let i = n + 1; ; i++) {
   const result = isPrime(i);
   if (result) return i;
  }
-} </pre>
+}</code></pre>
 </section>
 <section class="experience">
 	<h3>My projects</h3>
@@ -104,13 +107,13 @@ const contentCodeRender = `
 	<li class="creditCardMask">Credit Card Mask</li>
 	<li class="whosOnline">Who's Online?</li>
 	<li class="euclideanDistance">Euclidean distance in n dimensions</li>
-	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">>my codewars account&lt;</a></li>
+	<li class="more"><a href="https://www.codewars.com/users/ts-andrey-rss" target="_blank">&gt;my codewars account&lt;</a></li>
 </ul>
 <pre><code class="insert-code">// Find next prime
 function nextPrime(n){
  const isPrime = num => {
-  for (let i = 2; i*i &lt;= num; i++)
-   { if (num % i === 0) return false }
+  for (let i=2; i*i &lt;= num; i++)
+   if (num % i === 0) return false
   return num > 1;
  };
  for (let i = n + 1; ; i++) {
@@ -121,7 +124,6 @@ function nextPrime(n){
 </code></pre>
 </section>
 `;
-
 const contentProjectsRender = `
 <section class="experience">
 	<h3>My projects</h3>
@@ -132,7 +134,7 @@ const contentProjectsRender = `
 				<div class="image"><img src="./assets/img/museum.jpg" alt="museum project" /></div>
 				<p>
 					Museum project was created from a specific design model in Figma. This project was done with help of
-					PerfectPixel extension to make everything looks exactly like in the model.
+					PerfectPixel extension to make everything looks exactly like in the model. Technologies(Css (Sass), Html5)
 				</p>
 			</a>
 		</li>
@@ -143,7 +145,7 @@ const contentProjectsRender = `
 				<p>
 					Drum Kit application was created with pleasure. Because in this application every user able to feel
 					himself as a musician. This little application is able to open in every person passion to music
-					creation.
+					creation. Technologies(Css (Sass), Html5, Pure JS).
 				</p>
 			</a>
 		</li>
@@ -156,7 +158,7 @@ const contentProjectsRender = `
 				<div class="image"><img src="./assets/img/custom-player.jpg" alt="video player project" /></div>
 				<p>
 					This Video Player application has it's own feature. You can view each video only one time, after
-					which this video will disappear. It could be useful in a lot of situations.
+					which this video will disappear. It could be useful in a lot of situations. Technologies(Css (Sass), Html5, Pure JS).
 				</p>
 			</a>
 		</li>
@@ -176,11 +178,18 @@ const contentProjectsRender = `
 </section>
 `;
 
+const videoRender = `
+<section class='video'>
+<h3>My video CV</h3>
+<iframe class='player' width="560" height="315" src="https://www.youtube.com/embed/6Mq_dtxZJHE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+`;
+
 const codeSampleNextPrime = `// Find next prime
 function nextPrime(n){
  const isPrime = num => {
-  for (let i = 2; i*i &lt;= num; i++)
-   { if (num % i === 0) return false }
+  for (let i=2; i*i &lt;= num; i++)
+   if (num % i === 0) return false
   return num > 1;
  };
  for (let i = n + 1; ; i++) {
@@ -210,7 +219,7 @@ const hexValues = {
 const normalizer = num => {
  let result = num;
  if (result &lt;= 0) result = 0;
- if (result &gt;= 15) result = 15;
+ if (result >= 15) result = 15;
  return result;
 };
 const converter = num => {
@@ -218,40 +227,42 @@ const converter = num => {
  whole = normalizer(whole);
  let remainder = num - whole * 16;
  remainder = normalizer(remainder);
- return '$_{hexValues[whole]}$_{hexValues[remainder]}';
+ return'$_{hexValues[whole]}$
+ _{hexValues[remainder]}';
 };
 const rgb = (r, g, b) => {
- return '$_{converter(r)}$_{converter(g)}$_{converter(b)}';
+ return '$_{converter(r)}$_
+ {converter(g)}$_{converter(b)}';
 };`;
 const codeSampleElementEqualsIndex = `// Element equals its index
 const indexEqualsValue = (array) => {
-const range1 = Math.floor(array.length / 4);
+const range1 = Math.floor(array.length/4);
 const range2 = range1 * 2;
 const range3 = range1 * 3;
 
-if (array[range2] &gt;= range2) {
- if (array[range1] &gt;= range1) {
-  for (let i = 0; i &lt;= range1; i++){
-   if (array[i] === i) return i;
+if(array[range2] >= range2) {
+ if(array[range1] >= range1) {
+  for(let i=0; i&lt;=range1; i++){
+   if(array[i] === i) return i;
   }
- } else if (array[range1] < range1) {
-  for (let i = range1; i &lt;= range2; i++){
-   if (array[i] === i) return i;
+ } else if(array[range1] <range1){
+  for(let i=range1; i&lt;=range2;i++){
+   if(array[i] === i) return i;
   }
  }
- } else if (array[range2] < range2) {
-  if (array[range3] &gt;= range3) {
-   for (let i = range2; i &lt;= range3; i++){
-    if (array[i] === i) return i;
+ } else if (array[range2] < range2){
+  if(array[range3] >= range3) {
+   for(let i=range2; i<=range3;i++){
+    if(array[i] === i) return i;
    }
-  } else if (array[range3] < range3) {
-   for (let i = range3; i < array.length; i++){
-    if (array[i] === i) return i;
+  } else if (array[range3] < range3){
+   for(let i=range3; i<array.length;i++){
+    if(array[i] === i) return i;
   }
  }
 } else {
- for (let i = 0; i &lt;= array.length; i++) {
-  if (array[i] === i) return i;
+ for(let i = 0; i &lt;= array.length;i++) 
+  if(array[i] === i) return i;
  }
 }
 return -1;
@@ -305,11 +316,11 @@ const codeSampleWhosOnline = `// Who's Online?
  return resultObj;
 };`;
 const codeSampleEuclideanDistance = `// Euclidean distance in n dimensions
-const euclideanDistance = (coord1, coord2) => {
+const euclideanDistance=(coord1, coord2)=>{
  let result = 0;
  
- for (let i = coord1.length - 1; i >= 0; i--){
-  result += Math.pow(coord1[i] - coord2[i], 2)
+ for (let i=coord1.length - 1; i>=0;i--){
+  result += Math.pow(coord1[i]-coord2[i],2)
  }
  return +(Math.sqrt(result)).toFixed(2);
 };`;
@@ -342,6 +353,7 @@ function renderCodeHandler() {
 function renderContentHandler() {
   content.forEach(el => {
     el.classList.remove('active');
+    nav.classList.remove('view');
   });
   this.classList.add('active');
   if (this.classList.contains('about')) {
@@ -355,9 +367,51 @@ function renderContentHandler() {
     });
   } else if (this.classList.contains('my-projects')) {
     insertContentPlace.innerHTML = contentProjectsRender;
+  } else if (this.classList.contains('video')) {
+    insertContentPlace.innerHTML = videoRender;
   }
+}
+
+function menuHandler() {
+  if (nav.classList.contains('view')) {
+    nav.classList.remove('view');
+  } else nav.classList.add('view');
 }
 
 content.forEach(el => {
   el.addEventListener('click', renderContentHandler);
 });
+
+menu.addEventListener('click', menuHandler);
+
+const selfEval = [
+  ['вёрстка валидная', '+10'],
+  ['вёрстка семантическая', '+20 (header, nav, main, aside, footer, time, section, h1, h3, h4'],
+  ['для оформления СV используются css-стили', '+10'],
+  [
+    'контент размещается в блоке, который горизонтально центрируется на странице. Фоновый цвет, если он есть, тянется во всю ширину страницы',
+    '+10',
+  ],
+  [
+    'вёрстка адаптивная: ни на одном из разрешений экрана до 320px включительно не появляется горизонтальная полоса прокрутки, при этом всё содержание страницы сохраняется',
+    '+10',
+  ],
+  ['есть адаптивное бургер-меню', '+10'],
+  ['на странице СV присутствует изображение, у изображения есть атрибут alt', '+10'],
+  ['контакты для связи и перечень навыков оформлены в виде списка ul > li', '+10'],
+  [
+    'CV содержит контакты для связи, краткую информацию о себе, перечень навыков, информацию об образовании и уровне английского',
+    '+10',
+  ],
+  ['CV содержит пример кода с подсветкой кода', '+10'],
+  [
+    'CV содержит изображения-ссылки на выполненные вами проекты. При клике по изображению страница проекта открывается в новой вкладке. У каждого проекта есть название, небольшое описание, указан перечень используемых технологий',
+    '+10',
+  ],
+  ['CV выполнено на английском языке', '+10'],
+  ['выполнены требования к Pull Request', '+10'],
+  ['есть видеорезюме автора CV на английском языке', '+10'],
+  ['дизайн, оформление, качество выполнения CV не ниже чем в примерах CV', '+10'],
+];
+
+selfEval.forEach(el => console.log(el));

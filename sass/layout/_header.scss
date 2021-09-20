@@ -7,7 +7,6 @@ header {
   color: $color-light-1;
   margin-top: 0.5rem;
   overflow: hidden;
-
   .wrapper {
     background-color: $color-dark-light;
     display: grid;
@@ -16,6 +15,7 @@ header {
   }
 
   .image {
+    padding-right: 2.5rem;
     text-align: center;
     background-color: $color-dark-light;
     height: 16.8rem;
@@ -77,7 +77,7 @@ header {
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 1100px) {
+@media screen and (min-width: 0px) and (max-width: 1150px) {
   header {
     width: 18.5rem * 5;
 
@@ -86,6 +86,7 @@ header {
     }
 
     .image {
+      padding: 0;
       height: 19.3rem;
       width: 100%;
     }
@@ -103,10 +104,11 @@ header {
   }
 }
 
-@media screen and (min-width: 0px) and (max-width: 930px) {
+@media screen and (min-width: 0px) and (max-width: 950px) {
   header {
     width: 15rem * 5;
     .image {
+      padding: 0;
       img {
         position: absolute;
         bottom: 0;
@@ -115,9 +117,16 @@ header {
     }
   }
 }
-@media screen and (min-width: 0px) and (max-width: 750px) {
+@media screen and (min-width: 0px) and (max-width: 780px) {
   header {
-    width: 100vw;
+    width: 95vw;
+
+    .image {
+      height: 16rem;
+      img {
+        height: 16rem;
+      }
+    }
 
     .info {
       padding: 1rem;
@@ -139,11 +148,11 @@ header {
     }
   }
 }
-@media screen and (min-width: 0px) and (max-width: 650px) {
+@media screen and (min-width: 0px) and (max-width: 680px) {
   header {
     font-size: 1.2rem;
     .image {
-      height: 23.9rem;
+      height: 19rem;
       img {
         height: 18rem;
       }
