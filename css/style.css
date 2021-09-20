@@ -60,7 +60,7 @@ footer {
       footer .wrapper ul li a svg {
         height: 1.8rem; } }
 
-@media (min-width: 0px) and (max-width: 400px) {
+@media (min-width: 0px) and (max-width: 450px) {
   footer .wrapper ul {
     display: grid;
     grid-template-columns: repeat(2, auto);
